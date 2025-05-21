@@ -1,77 +1,89 @@
 # 19CS301-Module33
-Exp.No:3(a)	STRING- FIND AND REPLACE
+Exp.No:3(a)	STRING- REMOVE A STRING
 ### AIM
-To write a python function to accept a string, word to be replaced and replace the words of the string, get the new word to be replaced from the user.
+To write a function "remove" that accepts a string and removes all the vowels from the string.
 ### ALGORITHM
-Step 1:	 Begin the program.
+Start
 
-Step 2:	 Input the original string (str1) and the word to replace (replace_str)
+Define a string vowels = "aeiouAEIOU"
 
-Step 3:	 Ask the user to input the replacement word (str2).
+Read string str (passed to the function)
 
-Step 4:	 Replace all occurrences of replace_str in str1 with str2 using replace() method in Python.
+For each character i in str:
 
-Step 5:	 The modified string is stored in str3.
+If i is in vowels:
 
-Step 6:	 Display the original string (str1) to show the user the initial string.
+Replace all occurrences of i in str with an empty string ""
 
-Step 7:	 Display the modified string (str3) to show the user the string after the replacement.
+Print the modified str (with vowels removed)
 
-Step 8:	 Terminate the program.
+End
 
 ### PROGRAM
-```def replacestr(str1,replace_str):
-    str2=input()
-    str3=str1.replace(replace_str,str2)
-    print(f"The old string is {str1}\nthe new string is {str3}")
+```
+def remove(str):
+    vowels="aeiouAEIOU"
+    for i in str:
+        if i in vowels:
+            str=str.replace(i,"")
+    print(str)
 ```
 ### OUTPUT
- ![image](https://github.com/user-attachments/assets/ab789972-0bcc-4de6-a234-f80f5209ed92)
+ ![image](https://github.com/gokulkrishnan2005/19CS301-Module33/blob/main/nn.png)
 
 ### RESULT
-Thus the python program of find and replace is implemented and executed successfully.
+Thus the python program of function "remove" that accepts a string and removes all the vowels from the string has been implemented and executed successfully.
 
 
-Exp.No:3(b)	REGEX-PATTERN MATCHING USING REGEX
+Exp.No:3(b)	REGEX- MATCHING USING REGEX
 
 ### AIM
-To write a Python program that matches a string that has an a followed by two to three 'b'.
+To write a Python program that matches a word at the beginning of a string.
 ### ALGORITHM
 
-Step 1:	 Begin the program.
+Start
 
-Step 2:	 Accept a string str1 from the user.
+Read a string str from the user
 
-Step 3:	 Define a regular expression pattern as r"[a]+b{2,3}".
+Define a regex pattern: patterns = '^\W+'
 
-Step 4:	 Use the re.match() function to check if the string str1 matches the given pattern. If the string str1 matches the pattern, proceed to step 5. Else If the string str1 does not 
-          match the pattern, proceed to step 6.
+Use re.search(patterns, text) to check if the string starts with non-word characters
 
-Step 5:	 Print "Found a match!" if the string matches the pattern.
+If a match is found:
 
-Step 6:	 Print "Not matched!" if the string does not match the pattern.
+Return "Not matched!"
 
-Step 7:	 Terminate the program.
+Else:
+
+Return "Found a match!"
+
+Print the result
+
+End
 
 ### PROGRAM
-```import re
-str1=input()
-pattern=r"[a]+b{2,3}"
-if re.match(pattern,str1):
-    print("Found a match!")
-else:
-    print("Not matched!")
+```
+import re
+def text_match(text):
+    patterns= '^\W+'
+    if re.search(patterns,text):
+        return("Not matched!")
+    else:
+        return('Found a match!')
+str=input()
+print(text_match(str))
+        
 ```
 ### OUTPUT
- ![image](https://github.com/user-attachments/assets/b473b268-4127-4409-9985-e43d47b02847)
+ ![image](https://github.com/gokulkrishnan2005/19CS301-Module33/blob/main/bb.png)
 
 ### RESULT
-Thus the python program for pattern matching using regular expression was  implemented and executed successfully.
+Thus the python program for that matches a word at the beginning of a string was  implemented and executed successfully.
 
-Exp.No:3(c)	LIST- EVEN NUMBERS LIST
+Exp.No:3(c)	LIST- ODD NUMBERS LIST
 
 ### AIM
-To write a python function that accepts N and to create a list with even numbers up to N.
+To write a python function that accepts N and to create a list with odd numbers up to N.
 ### ALGORITHM
 
 Step 1:	 Begin the program.
@@ -80,88 +92,101 @@ Step 2:	 Accept an integer a.
 
 Step 3:	 Create an empty list l.
 
-Step 4:	In For Loop, Iterate through the numbers from 1 to a-1.For each number i, check if i is even: If i % 2 == 0, append i to the list l.
+Step 4:	In For Loop, Iterate through the numbers from 1 to a-1.For each number i, check if i is even: If i % 2 == 1, append i to the list l.
 
-Step 5:	 Print the list l which contains all even numbers from 1 to a-1.
+Step 5:	 Print the list l which contains all odd numbers from 1 to a-1.
 
 Step 6:	 Terminate the program.
 ### PROGRAM
-```def createlist(a):
+```
+def createlist(a):
     l=[]
     for i in range(1,a):
-        if (i%2==0):
+        if (i%2==1):
             l.append(i)
     print(l)
 ```
 ### OUTPUT
- ![image](https://github.com/user-attachments/assets/a21369b0-1967-4362-b91f-84bb82becbcd)
+ ![image](https://github.com/gokulkrishnan2005/19CS301-Module33/blob/main/vv.png)
 
 ### RESULT
-Thus the python program for printing a list with even numbers up to n, was implemented and executed successfully.
+Thus the python program for printing a list with odd numbers up to n, was implemented and executed successfully.
 
-Exp.No:3(d)	TUPLES- A TUPLE WITH MULTIPLES OF 5
+Exp.No:3(d)	TUPLES- A TUPLE WITH MULTIPLE 0F 9
 ### AIM
-To write a python program to create the tuple by the multiples of 5 up to N. Get the N value from the user.
+To write a python program to create the tuple by the multiples of 9 up to N and the print length of the tuple. Get the N value from the user..
 ### ALGORITHM
 
-Step 1:	 Begin the program.
+Start
 
-Step 2:	 Accept an integer N from the user.
+Read an integer a from the user
 
-Step 3:	 Define an empty tuple multiples_of_5.
+Initialize an empty list b
 
-Step 4:	 Loop through the numbers starting from 5, up to N-1 (not including N), with a step size of 5 For each value of i, add i to the tuple multiples_of_5.
+Loop from i = 9 to a - 1:
 
-Step 5:	 Return the multiples_of_5 tuple.
+If i % 9 == 0, then:
 
-Step 6:	 print the resultant tuple.
+Append i to list b
 
-Step 7:	 Terminate the program.
+Convert list b to a tuple
+
+Find the length of the tuple using len(b) and store in c
+
+Print the tuple
+
+Print the length c with a message
+
+End
 ### PROGRAM
 ```
-def create_tuple(N):
-    multiples_of_5 = tuple(i for i in range(5, N, 5))
-    return multiples_of_5
-N = int(input())
-result = create_tuple(N)
-print(f"{result}")
+a=int(input())
+b=[]
+for i in range(9,a):
+    if i%9==0:
+        b.append(i)
+b=tuple(b)
+c=len(b)
+print(b)
+print("Length of the tuple is",c)
 ```
 ### OUTPUT
-![image](https://github.com/user-attachments/assets/a16820ca-d669-4520-b141-c4e0a836c910)
+![image](https://github.com/gokulkrishnan2005/19CS301-Module33/blob/main/CC.png)
 
-
- 
 ### RESULT
-Thus the python program for printing a tuple with numbers that are multiples of 5 up to n, was implemented and executed successfully.
+Thus the python program for printing a tuple with numbers that are multiples of 9 up to N, was implemented and executed successfully.
 
-Exp.No:3(e)	SEB- STRING SLICING
+Exp.No:3(e)	SEB- ODD OR EVEN
 ### AIM
-To write a python function that accepts the string. Form a new string by reversing the characters in the given string from 4 th position to 10  th position with alternate characters and print the new string.
+To write a python program to define a function to check the number 1781 is even or odd.
+
 ### ALGORITHM
 
-Step 1:	 Begin the program.
+Start
 
-Step 2:	 Take a slice of input_string starting from index 2 up to index 10.
+Read an integer a from the user
 
-Step 3:	 Reverse the substring.
+Check if a % 2 == 1:
 
-Step 4:	 slice the reversed string, extracting every second character, starting from the first.
+If True, print "a is Odd number"
 
-Step 5:	 Print the sliced string in the above step.
+Else, print "a is not Odd number"
 
-Step 6:	 Terminate the program.
+End
+
 ### PROGRAM
 ```
-def slice(input_string):
-    substring = input_string[2:10:]
-    reversed_substring = substring[::-1]
-    print(f"The reversed string is '{reversed_substring[::2]}'")
+a=int(input())
+if a%2==1:
+    print(f"{a} is Odd number")
+else:
+    print(f"{a} is not Odd number")
 ```
 ### OUTPUT
- ![image](https://github.com/user-attachments/assets/1c3e5d33-4525-44e9-93c4-3431af135a04)
+ ![image](https://github.com/gokulkrishnan2005/19CS301-Module33/blob/main/XX.png)
 
 ### RESULT
-Thus the python function that accepts the string. Form a new string by reversing the characters in the given string from 4 th position to 10  th position with alternate characters and print the new string was implemented and executed successfully.
+Thus the python program to define a function to check the number 1781 is even or odd was implemented and executed successfully.
 
 
 
